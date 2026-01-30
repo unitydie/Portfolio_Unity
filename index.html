@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Vladyslav Reznichenko &mdash; Unity Developer</title>
+    <meta
+      name="description"
+      content="Pixel-art styled portfolio of Vladyslav Reznichenko, a mid-level Unity developer focused on gameplay systems, mobile integrations, and production-friendly optimization."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bungee&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="assets/vendor/three.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <canvas id="rain" aria-hidden="true"></canvas>
+    <div id="canvas-container" aria-hidden="true"></div>
+    <div class="site">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="social-dock" aria-label="Social links">
+      <a
+        class="social-dock__link"
+        href="https://www.instagram.com/ne_rasty/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        title="Instagram"
+      >
+        <img class="social-dock__img" src="assets/img/inst_logo_matrix.png" alt="" width="42" height="42" decoding="async" />
+      </a>
+
+      <a
+        class="social-dock__link"
+        href="https://github.com/unitydie"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        title="GitHub"
+      >
+        <img class="social-dock__img" src="assets/img/gitlogo__matrix.png" alt="" width="42" height="42" decoding="async" />
+      </a>
+
+      <a class="social-dock__link" href="mailto:hello@example.com" aria-label="Email" title="Email">
+        <img class="social-dock__img" src="assets/img/gmaillogo_matrix.png" alt="" width="42" height="42" decoding="async" />
+      </a>
+    </div>
+
+    <main id="main">
+      <section class="section hero" id="home" aria-labelledby="home-title">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="kicker kicker--name">Vladyslav Reznichenko</p>
+            <h1 class="hero__title glitch-text" id="home-title" data-text="Unity Gameplay Engineer">Unity Gameplay Engineer</h1>
+            <p class="hero__subheadline">Prototype → MVP → Release</p>
+            <p class="hero__subtitle">
+              I build gameplay systems, async flows, and production-ready features.<br />
+              From fast prototypes to stable mobile releases.
+            </p>
+
+            <div class="hero__cta">
+              <a class="btn btn--sfx" href="#projects" data-sfx="ui_click">View Projects</a>
+              <a class="btn btn--ghost btn--sfx" href="mailto:hello@example.com" data-sfx="ui_click">Contact</a>
+            </div>
+
+          </div>
+
+          <div class="hero__media" aria-label="Profile image">
+            <figure class="avatar-frame">
+              <img
+                class="avatar-img"
+                src="assets/img/profile-placeholder.png"
+                data-prefer-src="assets/img/profile.jpg"
+                alt="Portrait of Vladyslav Reznichenko"
+                width="420"
+                height="420"
+                decoding="async"
+                loading="eager"
+              />
+              <figcaption class="sr-only">Replace with assets/img/profile.jpg when available.</figcaption>
+            </figure>
+
+            <div class="hero__media-actions">
+              <a class="cv-download" href="assets/Vladyslav_Reznichenko_CV.pdf" download aria-label="Download CV (PDF)">
+                <span class="cv-download__text">Download CV</span>
+                <span class="cv-download__bar" aria-hidden="true"></span>
+                <svg class="cv-download__icon" viewBox="0 0 25 30" aria-hidden="true">
+                  <path class="cv-download__check" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--compact" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="sr-only" id="about-title">About</h2>
+          </header>
+
+          <div class="about__grid">
+            <div class="about__col" aria-labelledby="about-col-title">
+              <h3 class="section__title about__col-title" id="about-col-title">About</h3>
+              <div class="pixel-panel about__panel">
+                <p>
+                  I'm a confident mid-level Unity developer with a production mindset: clean systems, fast iteration,
+                  and stable builds. I enjoy taking projects from idea to playable MVP, then polishing them into
+                  release-ready versions.
+                </p>
+                <p>
+                  I'm strong in Unity systems, OOP/SOLID, and practical design patterns. I build gameplay, UI, and
+                  tooling that stays readable and scalable when the project grows.
+                </p>
+                <p>
+                  I've delivered async flows, ads integration (including rewarded ads bonuses), leaderboards, VFX,
+                  audio, menus, configs, Zenject, ScriptableObjects, NavMesh, physics, Firebase,
+                  Addressables/AssetBundles, Android Gradle, Photon multiplayer, and AI-assisted workflows.
+                </p>
+              </div>
+            </div>
+
+            <div class="about__col" aria-labelledby="ambitions-title">
+              <h3 class="section__title about__col-title" id="ambitions-title">Ambitions</h3>
+              <div class="pixel-panel about__panel">
+                <p>
+                  I want to grow into a production-ready gameplay engineer who can own features end-to-end: from
+                  prototype and iteration to release, analytics, and live updates. My focus is building clean,
+                  scalable systems, improving performance, and shipping mobile games that feel polished.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" id="projects-title">Projects</h2>
+          </header>
+
+          <div class="projects-hscroll" data-hscroll>
+            <div class="projects-hscroll__sticky">
+              <div class="projects-hscroll__track projects-grid" aria-label="Projects">
+                <article class="project-card" aria-label="Project: DUEL - Async Combat Prototype">
+                  <div class="thumb" aria-hidden="true">
+                    <img
+                      src="assets/img/project-duel.png"
+                      alt="Pixel thumbnail for DUEL"
+                      width="640"
+                      height="360"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="project-card__body">
+                    <h3 class="project-card__title">DUEL</h3>
+                    <p class="project-card__line">
+                      Async combat loop with 4 unique characters, winner screen, and restart flow.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="project-card" aria-label="Project: Reaction POP - Ads + Leaderboard Arcade">
+                  <div class="thumb" aria-hidden="true">
+                    <img
+                      src="assets/img/project-reaction.png"
+                      alt="Pixel thumbnail for Reaction POP"
+                      width="640"
+                      height="360"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="project-card__body">
+                    <h3 class="project-card__title">Reaction POP</h3>
+                    <p class="project-card__line">
+                      Bonus loop + Google ads setup (rewarded bonuses) + leaderboard, with VFX/audio and menus.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="project-card" aria-label="Project: Drone Hunt - Physics + NavMesh Agents">
+                  <div class="thumb" aria-hidden="true">
+                    <img
+                      src="assets/img/project-drone.png"
+                      alt="Pixel thumbnail for Drone Hunt"
+                      width="640"
+                      height="360"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="project-card__body">
+                    <h3 class="project-card__title">Drone Hunt</h3>
+                    <p class="project-card__line">NavMeshAgent hunters + physics-driven gameplay and AI tuning hooks.</p>
+                  </div>
+                </article>
+
+                <article class="project-card" aria-label="Project: Archero-like - Classes, Zenject, Configs">
+                  <div class="thumb" aria-hidden="true">
+                    <img
+                      src="assets/img/project-archero.png"
+                      alt="Pixel thumbnail for Archero-like"
+                      width="640"
+                      height="360"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="project-card__body">
+                    <h3 class="project-card__title">Archero-like</h3>
+                    <p class="project-card__line">
+                      Zenject DI architecture + config-driven tuning, with menus, ads, sounds, and VFX.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="project-card" aria-label="Project: Inventory System - ScriptableObjects">
+                  <div class="thumb" aria-hidden="true">
+                    <img
+                      src="assets/img/project-inventory.png"
+                      alt="Pixel thumbnail for Inventory System"
+                      width="640"
+                      height="360"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="project-card__body">
+                    <h3 class="project-card__title">Inventory System</h3>
+                    <p class="project-card__line">
+                      ScriptableObject item definitions + inventory system core with clean extension points for UI/gameplay.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" id="skills-title">Skills</h2>
+          </header>
+
+          <div class="skills-grid">
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">Unity</p>
+              <div class="bar" role="img" aria-label="Unity: advanced">
+                <div class="bar__fill" style="width: 92%"></div>
+              </div>
+              <p class="skill-card__note">Advanced</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">OOP / SOLID</p>
+              <div class="bar" role="img" aria-label="OOP and SOLID: strong">
+                <div class="bar__fill" style="width: 86%"></div>
+              </div>
+              <p class="skill-card__note">Strong</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">Design Patterns</p>
+              <div class="bar" role="img" aria-label="Design patterns: strong">
+                <div class="bar__fill" style="width: 84%"></div>
+              </div>
+              <p class="skill-card__note">Strong</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">Ads Integration</p>
+              <div class="bar" role="img" aria-label="Ads integration: strong">
+                <div class="bar__fill" style="width: 82%"></div>
+              </div>
+              <p class="skill-card__note">Strong</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">Mobile (Android)</p>
+              <div class="bar" role="img" aria-label="Mobile Android: good">
+                <div class="bar__fill" style="width: 74%"></div>
+              </div>
+              <p class="skill-card__note">Good</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">Zenject / DI</p>
+              <div class="bar" role="img" aria-label="Zenject and dependency injection: good">
+                <div class="bar__fill" style="width: 72%"></div>
+              </div>
+              <p class="skill-card__note">Good</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">Firebase</p>
+              <div class="bar" role="img" aria-label="Firebase: good">
+                <div class="bar__fill" style="width: 70%"></div>
+              </div>
+              <p class="skill-card__note">Good</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">Addressables / AssetBundles</p>
+              <div class="bar" role="img" aria-label="Addressables and AssetBundles: good">
+                <div class="bar__fill" style="width: 72%"></div>
+              </div>
+              <p class="skill-card__note">Good</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">Multiplayer (Photon)</p>
+              <div class="bar" role="img" aria-label="Photon multiplayer: good">
+                <div class="bar__fill" style="width: 68%"></div>
+              </div>
+              <p class="skill-card__note">Good</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">VFX / Audio / UI Polish</p>
+              <div class="bar" role="img" aria-label="VFX, audio, UI polish: good">
+                <div class="bar__fill" style="width: 76%"></div>
+              </div>
+              <p class="skill-card__note">Good</p>
+            </div>
+
+            <div class="skill-card pixel-panel">
+              <p class="skill-card__title">AI-assisted workflows</p>
+              <div class="bar" role="img" aria-label="AI-assisted workflows: good">
+                <div class="bar__fill" style="width: 73%"></div>
+              </div>
+              <p class="skill-card__note">Good</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <button class="fab" id="back-to-top" type="button" aria-label="Back to top">
+      <span aria-hidden="true">^</span>
+    </button>
+    </div>
+  </body>
+</html>
