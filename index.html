@@ -19,7 +19,7 @@
     <script src="assets/vendor/three.min.js" defer></script>
     <script src="app.js" defer></script>
   </head>
-  <body>
+  <body class="is-loaded">
     <canvas id="rain" aria-hidden="true"></canvas>
     <div id="canvas-container" aria-hidden="true"></div>
     <div class="site">
@@ -192,14 +192,16 @@
 
                 <article class="project-card" aria-label="Project: Drone Hunt - Physics + NavMesh Agents">
                   <div class="thumb" aria-hidden="true">
-                    <img
-                      src="assets/img/project-drone.png"
-                      alt="Pixel thumbnail for Drone Hunt"
-                      width="640"
-                      height="360"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    <video
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      preload="metadata"
+                      poster="assets/img/project-drone.png"
+                    >
+                      <source src="assets/video/drone.mp4" type="video/mp4" />
+                    </video>
                   </div>
                   <div class="project-card__body">
                     <h3 class="project-card__title">Drone Hunt</h3>

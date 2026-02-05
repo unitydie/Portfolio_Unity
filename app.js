@@ -400,6 +400,10 @@
     let enabled = mqlDesktop.matches;
     let startY = 0;
     let distance = 0;
+    let step = 0;
+    let maxIndex = 0;
+    let viewportW = 0;
+    let cards = [];
     let raf = 0;
 
     const clamp01 = (v) => Math.max(0, Math.min(1, v));
@@ -418,14 +422,26 @@
 
       // Ensure layout has settled
       const stickyRect = sticky.getBoundingClientRect();
-      const viewportW = Math.max(1, Math.floor(stickyRect.width));
+      viewportW = Math.max(1, Math.floor(stickyRect.width));
       const stickyH = Math.max(1, Math.floor(stickyRect.height));
 
-      distance = Math.max(0, Math.floor(track.scrollWidth - viewportW));
+      cards = Array.from(track.querySelectorAll(".project-card"));
+      const count = cards.length || 1;
+      maxIndex = Math.max(0, count - 1);
+      step = stickyH;
+      distance = step * maxIndex;
       startY = Math.floor(sticky.getBoundingClientRect().top + window.scrollY);
 
       // Provide enough vertical scroll room to translate the track fully
       root.style.height = `${stickyH + distance}px`;
+
+      // Lock exact widths to avoid fractional gaps
+      track.style.width = `${viewportW * count}px`;
+      cards.forEach((card) => {
+        card.style.width = `${viewportW}px`;
+        card.style.maxWidth = `${viewportW}px`;
+        card.style.flex = `0 0 ${viewportW}px`;
+      });
 
       // Apply once
       onScroll();
@@ -439,8 +455,9 @@
       }
 
       const y = window.scrollY;
-      const t = clamp01((y - startY) / distance);
-      const x = Math.round(-t * distance);
+      const raw = (y - startY) / (step || 1);
+      const index = Math.max(0, Math.min(maxIndex, Math.round(raw)));
+      const x = Math.round(-index * viewportW);
       track.style.transform = `translate3d(${x}px, 0, 0)`;
     };
 
