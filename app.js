@@ -411,6 +411,12 @@
     const reset = () => {
       root.style.height = "";
       track.style.transform = "";
+      track.style.width = "";
+      cards.forEach((card) => {
+        card.style.width = "";
+        card.style.maxWidth = "";
+        card.style.flex = "";
+      });
     };
 
     const measure = () => {
