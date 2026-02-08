@@ -862,6 +862,10 @@ body.rain-off #rain {
   height: clamp(420px, 70vh, 78vh);
 }
 
+.projects-hscroll__track .project-card--summary .thumb {
+  height: clamp(210px, 34vh, 300px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .projects-hscroll__sticky {
     position: static;
@@ -969,6 +973,39 @@ body.rain-off #rain {
   background: #000;
 }
 
+.thumb--text {
+  display: grid;
+  align-items: center;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(0, 255, 120, 0.18), rgba(0, 0, 0, 0) 44%),
+    repeating-linear-gradient(0deg, rgba(0, 255, 120, 0.08) 0 1px, rgba(0, 0, 0, 0) 1px 22px),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.86));
+}
+
+.thumb__text-block {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.thumb__kicker {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(120, 255, 160, 0.72);
+}
+
+.thumb__headline {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(0.9rem, 1.1vw, 1.18rem);
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: rgba(0, 255, 120, 0.95);
+}
+
 .thumb.is-missing img {
   display: none;
 }
@@ -1017,6 +1054,17 @@ body.rain-off #rain {
   overflow: hidden;
 }
 
+.project-card__line--full {
+  display: block;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: initial;
+  overflow: visible;
+}
+
+.project-card__line + .tag-list {
+  margin-top: 0.9rem;
+}
+
 .project-card__features {
   margin: 0;
   padding: 0;
@@ -1044,6 +1092,50 @@ body.rain-off #rain {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.65);
 }
 
+.project-card__features strong {
+  color: rgba(0, 255, 120, 0.92);
+  font-weight: 700;
+}
+
+.project-card--summary .project-card__features {
+  gap: 0.32rem;
+  font-size: clamp(0.84rem, 0.95vw, 0.98rem);
+  line-height: 1.42;
+}
+
+.project-card--summary {
+  grid-template-rows: auto auto;
+  align-content: center;
+  gap: clamp(0.9rem, 1.8vh, 1.4rem);
+}
+
+.project-card--summary .thumb--text {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.project-card--summary .thumb__text-block {
+  width: min(100%, 48rem);
+}
+
+.project-card--summary .project-card__body {
+  margin-top: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.project-card--summary .project-card__line {
+  margin: 0 auto;
+  max-width: 62ch;
+  text-align: center;
+}
+
+.project-card--summary .project-card__features {
+  margin: 0 auto;
+  width: min(100%, 62ch);
+}
+
 .tag-list {
   list-style: none;
   display: flex;
@@ -1068,6 +1160,7 @@ body.rain-off #rain {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 0.15rem;
 }
 
 .skills-grid {
@@ -1369,8 +1462,8 @@ a.small:hover {
 .cv-download__icon {
   position: absolute;
   z-index: 3;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -1380,7 +1473,7 @@ a.small:hover {
 .cv-download__check {
   fill: none;
   stroke: var(--cv-ink);
-  stroke-width: 4;
+  stroke-width: 3.2;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 0;
@@ -1453,15 +1546,15 @@ a.small:hover {
     transform: translate(-50%, -50%) scale(1);
   }
   70% {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
     border-radius: 999px;
     background: var(--cv-accent);
-    transform: translate(-50%, -50%) scale(1.12);
+    transform: translate(-50%, -50%) scale(1.08);
   }
   100% {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
     border-radius: 999px;
     background: var(--cv-accent);
     transform: translate(-50%, -50%) scale(1);
@@ -1492,8 +1585,8 @@ a.small:hover {
 }
 
 .cv-download.is-done .cv-download__bar {
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   border-radius: 999px;
   background: var(--cv-accent);
 }
